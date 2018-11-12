@@ -4,6 +4,8 @@ import (
 	"log"
 	"net/http"
 	"os"
+
+	"github.com/joho/godotenv"
 )
 
 func main() {
@@ -17,7 +19,6 @@ func main() {
 	}
 
 	// Build handler.
-	// TODO: attach dependencies for shared functionality.
 	h := handler{Logger: logger}
 
 	// Setup routes.

@@ -30,6 +30,7 @@ func buildRoutes(h handler) *httprouter.Router {
 			middlewares...,
 		))
 	}
+	router.ServeFiles("/assets/*filepath", http.Dir("assets"))
 
 	return router
 }

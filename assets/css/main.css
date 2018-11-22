@@ -1,0 +1,12 @@
+/* Main CSS */
+.sticky {
+  position: sticky;
+  top: 0;
+}
+
+.sticky ul {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px 0 10px 10px;
+  border-radius: 0 0 5px 5px;
+  margin: 0 20px 0;
+}

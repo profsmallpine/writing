@@ -16,6 +16,16 @@ func (h *handler) goHome(w http.ResponseWriter, r *http.Request) {
 	respond(h.Logger, w, r, "./tmpl/index.tmpl", nil)
 }
 
+// zenOfWritingGoodCode is used for handling requests to "/writing/zen-of-writing-good-code".
+func (h *handler) zenOfWritingGoodCode(w http.ResponseWriter, r *http.Request) {
+	respond(h.Logger, w, r, "./tmpl/writing/zen_of_writing_good_code.tmpl", nil)
+}
+
+// lessonsFromAPIDesign is used for handling requests to "/writing/lessons-from-api-design".
+func (h *handler) lessonsFromAPIDesign(w http.ResponseWriter, r *http.Request) {
+	respond(h.Logger, w, r, "./tmpl/writing/lessons_from_api_design.tmpl", nil)
+}
+
 // respond is used to parse a base template.
 func respond(logger *log.Logger, w http.ResponseWriter, r *http.Request, layout string, data interface{}) {
 	// Parse static files.

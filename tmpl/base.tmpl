@@ -5,12 +5,13 @@
     <title>profsmallpine interwebs home</title>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css">
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/main.css">
   </head>
   <body>
     <!-- NOTE: might be nice to connect nav colors to sections colors, probably need a better palette for this -->
     <div class="container mx-auto font-sans mb-24">
-      <div class="flex justify-center m-8">
-        <ul class="list-reset flex flex-wrap content-center">
+      <div id="navbar" class="flex justify-center m-8">
+        <ul id="navbar-ul" class="list-reset flex flex-wrap content-center">
           <li class="mr-6">
             <a class="text-blue hover:text-blue-darker text-5xl" href="#">Writing.</a>
           </li>
@@ -24,5 +25,6 @@
       </div>
       {{ template "pageContent" . }}
     </div>
+    <script src="/assets/js/main.js" type="text/javascript"></script>
   </body>
 </html>

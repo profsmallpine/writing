@@ -8,6 +8,13 @@ import (
 	"github.com/joho/godotenv"
 )
 
+// TODO: Add transition to section from navbar
+// TODO: make ^ work from writing pages
+// TODO: write DS blog and add to website
+
+// NOTE: move writing to content from database and single handler, blocking:
+// 			 schema based on writing organization
+
 func main() {
 	// Setup logger.
 	logger := log.New(os.Stdout, "", log.Lshortfile|log.LstdFlags)

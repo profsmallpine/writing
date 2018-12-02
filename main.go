@@ -21,8 +21,7 @@ func main() {
 
 	// Load .env file.
 	if err := godotenv.Load(); err != nil {
-		logger.Println("error loading .env file")
-		return
+		panic("could not load env!")
 	}
 
 	// Build handler.
@@ -32,5 +31,7 @@ func main() {
 	router := buildRoutes(h)
 
 	// Run server.
-	http.ListenAndServe(":"+os.Getenv("PORT"), router)
+	if err := http.ListenAndServe(":"+os.Getenv("PORT"), router); err != nil {
+		panic("could not start server!")
+	}
 }

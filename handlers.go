@@ -26,6 +26,11 @@ func (h *handler) lessonsFromAPIDesign(w http.ResponseWriter, r *http.Request) {
 	respond(h.Logger, w, r, "./tmpl/writing/lessons_from_api_design.tmpl", nil)
 }
 
+// devicesStrategy is used for handling requests to "/writing/devices-strategy".
+func (h *handler) devicesStrategy(w http.ResponseWriter, r *http.Request) {
+	respond(h.Logger, w, r, "./tmpl/writing/devices_strategy.tmpl", nil)
+}
+
 // respond is used to parse a base template.
 func respond(logger *log.Logger, w http.ResponseWriter, r *http.Request, layout string, data interface{}) {
 	// Parse static files.

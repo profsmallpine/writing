@@ -25,6 +25,7 @@ func buildRoutes(h handler) *httprouter.Router {
 		route{path: "/", method: http.MethodGet, handler: h.goHome},
 		route{path: "/writing/zen-of-writing-good-code", method: http.MethodGet, handler: h.zenOfWritingGoodCode},
 		route{path: "/writing/lessons-from-api-design", method: http.MethodGet, handler: h.lessonsFromAPIDesign},
+		route{path: "/writing/devices-strategy", method: http.MethodGet, handler: h.devicesStrategy},
 	}
 	for _, r := range routes {
 		router.Handler(r.method, r.path, chain(

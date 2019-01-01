@@ -8,8 +8,7 @@ import (
 	"github.com/joho/godotenv"
 )
 
-// TODO: Add transition to section from navbar
-// TODO: make ^ work from writing pages
+// TODO: improve UX/css for reading
 // TODO: write DS blog and add to website
 
 // NOTE: move writing to content from database and single handler, blocking:

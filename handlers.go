@@ -22,8 +22,8 @@ func (h *handler) zenOfWritingGoodCode(w http.ResponseWriter, r *http.Request) {
 }
 
 // lessonsFromAPIDesign is used for handling requests to "/writing/lessons-from-api-design".
-func (h *handler) lessonsFromAPIDesign(w http.ResponseWriter, r *http.Request) {
-	respond(h.Logger, w, r, "./tmpl/writing/lessons_from_api_design.tmpl", nil)
+func (h *handler) lessonsFromFailedDocuSignIntegration(w http.ResponseWriter, r *http.Request) {
+	respond(h.Logger, w, r, "./tmpl/writing/lessons_from_failed_docusign_integration.tmpl", nil)
 }
 
 // devicesStrategy is used for handling requests to "/writing/devices-strategy".

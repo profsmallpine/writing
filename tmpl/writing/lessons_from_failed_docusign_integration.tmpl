@@ -3,217 +3,217 @@
         <h1 class="mb-8">Lessons from Failed DocuSign Integration</h1>
         <h2 class="mb-2">Intro</h2>
         <p class="text-grey-darker text-base leading-loose text-lg">
-          If you’ve come here and are trying to choose an esignature service 
-          provider for your application, then you might want to jump to the 
-          Situation [click and scroll to link] section of this write-up. I 
-          recently made a bad call on an integration service for the project 
-          where I get paid to build software (AdvicePay). This got me to 
-          thinking about how programmers see themselves and how we make 
-          decisions based on the implications of that. To get to here, I need 
-          to first explain my relationship with a computer :)
+          If you’ve come here and are trying to choose an esignature service
+          provider for your application, then you might want to jump to the
+          <a href="#" data-jump-to-click="the-situation">Situation</a> section of this
+          write-up. I recently made a bad call on an integration service for the
+          project where I get paid to build software (AdvicePay). This got me
+          thinking about how programmers see themselves and how we make
+          decisions based on the implications of that. To get to here, I need to
+          first explain my relationship with a computer :)
         </p>
         <br />
-		
-		<h2 class="mb-2">Background</h2>
+
+		    <h2 class="mb-2">Background</h2>
         <p class="text-grey-darker text-base leading-loose text-lg">
-          I must have been about 11 when I got my first Apple PowerBook at a 
-          garage sale for $20. This was an exciting day, and I still remember 
-          loading each application, navigating to each menu item, and clicking 
-          it. For some reason, I had a voracious appetite to see how I could 
+          I must have been about 11 when I got my first Apple PowerBook at a
+          garage sale for $20. This was an exciting day, and I still remember
+          loading each application, navigating to each menu item, and clicking
+          it. For some reason, I had a voracious appetite to see how I could
           customize my new computer. Once I found Tetris, I was surely hooked.
         </p>
         <br />
 
         <p class="text-grey-darker text-base leading-loose text-lg">
-          To this day, I don’t see myself as a computer programmer. Maybe it’s 
-          all the origin stories where people discuss how they had to read the 
-          entire basic manual or they had to hand write the code and send it to 
-          the computer through Braille \s. There is a lot that I missed from when 
-          computers were firmly in the obscure nerd category days, but I’ve spent 
+          To this day, I don’t see myself as a computer programmer. Maybe it’s
+          all the origin stories where people discuss how they had to read the
+          entire basic manual or they had to hand write the code and send it to
+          the computer through Braille \s. There is a lot that I missed from when
+          computers were firmly in the obscure nerd category days, but I’ve spent
           my life solving problems that seem interesting with a computer.
         </p>
         <br />
 
         <p class="text-grey-darker text-base leading-loose text-lg">
-          During high school, these issues were mostly revolving around my MacBook 
-          and how to turn it into a boom box - play music with the lid closed (which 
-          involved some low level Mac debugging at the time) or something similar. I 
-          played a lot of Halo 1, and I learned how to make modded maps and things 
-          like this. Somehow, I always felt diminished in these accomplishment since 
-          there always seemed like a deeper (closer to the metal) way of solving 
-          problems with a computer. I could never get over this feeling of just being 
-          a consumer, while the real programmers were out there, shifting bytes and 
+          During high school, these issues were mostly revolving around my MacBook
+          and how to turn it into a boom box - play music with the lid closed (which
+          involved some low level Mac debugging at the time) or something similar. I
+          played a lot of Halo 1, and I learned how to make modded maps and things
+          like this. Somehow, I always felt diminished in these accomplishment since
+          there always seemed like a deeper (closer to the metal) way of solving
+          problems with a computer. I could never get over this feeling of just being
+          a consumer, while the real programmers were out there, shifting bytes and
           could solve problems in a somehow categorically different way than I was.
         </p>
         <br />
 
         <p class="text-grey-darker text-base leading-loose text-lg">
-          I’ve always been oriented to computers through a problem. For example, 
-          someone needed to sell brushes online, and so I used wordpress to make 
-          that happen in college. I took enough programming classes in school to 
-          know there were a lot of options when it came to building tools that 
-          computers could read, but I always found myself building tools with 
-          pre-existing software because I saw myself as a consumer and that true 
-          programmers were on a plane of existence beyond my own. I wish someone 
-          had told me this wasn’t true because I would have had a lot more fun 
+          I’ve always been oriented to computers through a problem. For example,
+          someone needed to sell brushes online, and so I used wordpress to make
+          that happen in college. I took enough programming classes in school to
+          know there were a lot of options when it came to building tools that
+          computers could read, but I always found myself building tools with
+          pre-existing software because I saw myself as a consumer and that true
+          programmers were on a plane of existence beyond my own. I wish someone
+          had told me this wasn’t true because I would have had a lot more fun
           using code to solve problems.
         </p>
         <br />
-		
-		<p class="text-grey-darker text-base leading-loose text-lg">
-          I studied philosophy + art in college so I jumped into the workforce 
-          doing something that didn’t line up very well with my interests. I found 
-          that I could provide the most value in automating as much of our workflow 
-          as possible. After integrating a slew of online pieces of software for a 
-          small business, I became painfully aware that I needed to get my web chops 
-          together so I could level up my problem solving skills. This was overwhelming, 
-          and I had no idea where to start. Should I quit my job? Should I go back to 
+
+		    <p class="text-grey-darker text-base leading-loose text-lg">
+          I studied philosophy + art in college so I jumped into the workforce
+          doing something that didn’t line up very well with my interests. I found
+          that I could provide the most value in automating as much of our workflow
+          as possible. After integrating a slew of online pieces of software for a
+          small business, I became painfully aware that I needed to get my web chops
+          together so I could level up my problem solving skills. This was overwhelming,
+          and I had no idea where to start. Should I quit my job? Should I go back to
           school (I started college on a computer science track and found it boring)?
         </p>
         <br />
-        
+
         <p class="text-grey-darker text-base leading-loose text-lg">
-          At the time, coding bootcamps were still unheard of. I was lucky to have one 
-          of my closest friends from college, Jeff Smith, attend Dev Bootcamp. I asked 
-          him a bunch of questions and decided to take the leap. I went to Dev Bootcamp 
-          in Chicago before moving back to my home state, Montana, and taking the first 
+          At the time, coding bootcamps were still unheard of. I was lucky to have one
+          of my closest friends from college, Jeff Smith, attend Dev Bootcamp. I asked
+          him a bunch of questions and decided to take the leap. I went to Dev Bootcamp
+          in Chicago before moving back to my home state, Montana, and taking the first
           job where they would hire me to write actual code. This first job was in C#, and
-          I’ve built professional tools with Ruby, Python, JavaScript, and Go since then. 
-          It has been a LOT of fun. I am currently working with a startup and helping them 
-          navigate best practices when it comes to building your own software. Like many 
-          developers in today’s world, I am making decisions about what tools to use and 
-          what integrations to choose, though I have only been working in the industry 
+          I’ve built professional tools with Ruby, Python, JavaScript, and Go since then.
+          It has been a LOT of fun. I am currently working with a startup and helping them
+          navigate best practices when it comes to building your own software. Like many
+          developers in today’s world, I am making decisions about what tools to use and
+          what integrations to choose, though I have only been working in the industry
           officially for a handful of years.
         </p>
         <br />
-        
-        <h2 class="mb-2">Situation</h2>
+
+        <h2 id="the-situation" class="mb-2">Situation</h2>
         <p class="text-grey-darker text-base leading-loose text-lg">
-          This basically gets us to the present day, where I’ve built a compliant payment 
-          processor for financial advisors with a small team. Last June, we began looking 
-          at integrating a contract signature as part of the payment process. We started 
-          this journey by spiking out a quick esignature build. It became quickly apparent 
-          that all of the niceties of the contract annotation process justified the use of 
-          an external service (we’ve tried to build as much as we can as to skip dependencies, 
-          I’ve spent enough time in rails to appreciate debugging owned code - an argument 
-          for another time...). Our sales team looked at DocuSign and HelloSign. The consensus 
-          was DocuSign because they were already familiar to the majority of our users, and we 
+          This basically gets us to the present day, where I’ve built a compliant payment
+          processor for financial advisors with a small team. Last June, we began looking
+          at integrating a contract signature as part of the payment process. We started
+          this journey by spiking out a quick esignature build. It became quickly apparent
+          that all of the niceties of the contract annotation process justified the use of
+          an external service (we’ve tried to build as much as we can as to skip dependencies,
+          I’ve spent enough time in rails to appreciate debugging owned code - an argument
+          for another time...). Our sales team looked at DocuSign and HelloSign. The consensus
+          was DocuSign because they were already familiar to the majority of our users, and we
           wanted this to be a frictionless experience.
         </p>
         <br />
-        
+
         <p class="text-grey-darker text-base leading-loose text-lg">
-          On a personal note, I had a baby coming in early August, and I didn’t do my due 
-          diligence to review API documentation. HelloSign seemed much friendlier, but I 
-          didn’t see any reason to push back at this stage. We put together a simple 
-          integration MVP which consisted of advisors adding templates and then choosing a 
-          template if they wanted to from our request payment page. There are no SDKs for Go 
-          from either DocuSign or HelloSign, so I started this project by reviewing my plan 
-          with a technical team at DocuSign. They were very nice, but seemed quite uneducated 
-          on their product. I was annoyed that they didn’t provide a secret key to authorize 
-          API requests. I thought I must have just not seen it, but after discussions with 
-          their team, this is intentional, and I’m yet to hear a good argument as to why this 
+          On a personal note, I had a baby coming in early August, and I didn’t do my due
+          diligence to review API documentation. HelloSign seemed much friendlier, but I
+          didn’t see any reason to push back at this stage. We put together a simple
+          integration MVP which consisted of advisors adding templates and then choosing a
+          template if they wanted to from our request payment page. There are no SDKs for Go
+          from either DocuSign or HelloSign, so I started this project by reviewing my plan
+          with a technical team at DocuSign. They were very nice, but seemed quite uneducated
+          on their product. I was annoyed that they didn’t provide a secret key to authorize
+          API requests. I thought I must have just not seen it, but after discussions with
+          their team, this is intentional, and I’m yet to hear a good argument as to why this
           is designed in such a way (probably just not talking to the right people).
         </p>
         <br />
-        
+
         <p class="text-grey-darker text-base leading-loose text-lg">
-          Anywho, I got the JWT flow built, and we were off and running. Things seemed simple 
-          enough. The DocuSign API docs are very quirky. It was kind of fun at first. Look at 
-          their params, guess what arguments I needed, read the error messages, refactor. I 
-          was able to use this process to get the majority of our features spiked out enough 
-          to finalize the MVP. We got this built out, and even announced the launch at our 
-          company conference. This is a big feature for our users, and we have been pretty 
-          excited about it. After a round of beta testing, we felt pretty good. This was the 
+          Anywho, I got the JWT flow built, and we were off and running. Things seemed simple
+          enough. The DocuSign API docs are very quirky. It was kind of fun at first. Look at
+          their params, guess what arguments I needed, read the error messages, refactor. I
+          was able to use this process to get the majority of our features spiked out enough
+          to finalize the MVP. We got this built out, and even announced the launch at our
+          company conference. This is a big feature for our users, and we have been pretty
+          excited about it. After a round of beta testing, we felt pretty good. This was the
           last moment I felt semi good about DocuSign.
         </p>
         <br />
-        
+
         <p class="text-grey-darker text-base leading-loose text-lg">
-          Someone on the team noticed that if you refresh the page, you get logged in as the 
-          user that was making the API request. You could see data across the entire account. 
-          I had noticed this during development, but assumed it was because I had just been 
-          logged in as that user and something weird with the session was occurring. This is 
-          my own fault for not debugging further at this step, but I was focused on getting 
-          the feature built and to prove we could do everything we needed with DS. We reached 
-          out to our contacts at DS who made it sound like a bug that would get escalated 
-          right away. About a week later, we were informed that this is intentional, and 
+          Someone on the team noticed that if you refresh the page, you get logged in as the
+          user that was making the API request. You could see data across the entire account.
+          I had noticed this during development, but assumed it was because I had just been
+          logged in as that user and something weird with the session was occurring. This is
+          my own fault for not debugging further at this step, but I was focused on getting
+          the feature built and to prove we could do everything we needed with DS. We reached
+          out to our contacts at DS who made it sound like a bug that would get escalated
+          right away. About a week later, we were informed that this is intentional, and
           they were worried about breaking anyone that is using this as a feature.
         </p>
         <br />
-        
+
         <p class="text-grey-darker text-base leading-loose text-lg">
-          We asked for a solution, and they seemed to be working on it. We did get escalated 
-          to a VP level person so I thought that maybe something was happening in our favor. 
-          We had our fated meeting with an actual DS engineer (oh my!), and I thought this 
-          would set us free. From the questions we were asked, I could tell that almost zero 
-          thought had been given on how to solve this. I had to re-explain the issue and show 
-          them what was happening to make it clear. They ended flipping some backend knobs 
-          which allowed us to create users that could both be authorized to make API calls 
-          and could skip the email verification step (we needed to make API calls as soon as 
+          We asked for a solution, and they seemed to be working on it. We did get escalated
+          to a VP level person so I thought that maybe something was happening in our favor.
+          We had our fated meeting with an actual DS engineer (oh my!), and I thought this
+          would set us free. From the questions we were asked, I could tell that almost zero
+          thought had been given on how to solve this. I had to re-explain the issue and show
+          them what was happening to make it clear. They ended flipping some backend knobs
+          which allowed us to create users that could both be authorized to make API calls
+          and could skip the email verification step (we needed to make API calls as soon as
           the user was created).
         </p>
         <br />
-        
+
         <p class="text-grey-darker text-base leading-loose text-lg">
-          I got this working, but it took some janky work to re-work the JWT flow to manage 
-          hourly expiring tokens for all of our user that choose to enable the esignature 
-          feature. At this point, I felt like we had a poorly designed integration because 
-          of the number of workarounds. To make things worse, the language was such that 
-          “it is extremely unlikely that these hidden features will get removed”, breaking 
-          our integration. Our integration was dead simple as far as integrations are 
-          concerned, and to give our users this streamlined experience, we had to move 
-          technical mountains. We were lucky to have the support of our team at this point 
-          to look into other options. We had a spike with the general flow of our integration 
-          in a couple days with HelloSign. We took another two weeks to finalize this build 
-          and finally launch it to our users the week before Thanksgiving. We were a little 
-          late in delivering this feature, but it is a much cleaner and less error prone 
+          I got this working, but it took some janky work to re-work the JWT flow to manage
+          hourly expiring tokens for all of our user that choose to enable the esignature
+          feature. At this point, I felt like we had a poorly designed integration because
+          of the number of workarounds. To make things worse, the language was such that
+          “it is extremely unlikely that these hidden features will get removed”, breaking
+          our integration. Our integration was dead simple as far as integrations are
+          concerned, and to give our users this streamlined experience, we had to move
+          technical mountains. We were lucky to have the support of our team at this point
+          to look into other options. We had a spike with the general flow of our integration
+          in a couple days with HelloSign. We took another two weeks to finalize this build
+          and finally launch it to our users the week before Thanksgiving. We were a little
+          late in delivering this feature, but it is a much cleaner and less error prone
           experience than DS.
         </p>
         <br />
-        
+
         <p class="text-grey-darker text-base leading-loose text-lg">
-          I wrote out a detailed response to our VP contact at DS as I was foolish enough 
-          to think they might care. We are out over $20K (small startup, I was the first 
-          hire, so this matters in our situation) and were getting ghosted by DS. Buyer 
-          beware. They approved a solution for us before we built it twice (as they should 
-          be the experts of their product), but are unwilling to work with us on some sort 
-          of compromise. I am grateful that they worked with us, but we were on a running 
-          clock with an announcement already made, and after two weeks, it turns out that 
+          I wrote out a detailed response to our VP contact at DS as I was foolish enough
+          to think they might care. We are out over $20K (small startup, I was the first
+          hire, so this matters in our situation) and were getting ghosted by DS. Buyer
+          beware. They approved a solution for us before we built it twice (as they should
+          be the experts of their product), but are unwilling to work with us on some sort
+          of compromise. I am grateful that they worked with us, but we were on a running
+          clock with an announcement already made, and after two weeks, it turns out that
           nobody had even looked into a viable solution. As I stated to the VP:
         </p>
         <br />
-        
+
         <p class="text-grey-darker text-base leading-loose text-lg">
-          “We were able to get some workarounds, but there were too many bad smells along 
+          “We were able to get some workarounds, but there were too many bad smells along
           the way. As an engineer, I prefer solutions over workarounds.”
         </p>
         <br />
-        
+
         <p class="text-grey-darker text-base leading-loose text-lg">
-          His response you ask? Something to the effect of, let us help you out, we’ll 
-          leave your account open for the rest of the year. How nice? After a couple 
-          months of being ghosted, we finally threatened legal recourse. It took less 
-          than 24 hours to get a response at this point, and it was stated that they 
-          had been looking into it deeply and would follow up later. I just got an 
-          email today stating that they don’t give a shit that we are out the money, 
-          and they will even throw in some free tech support (how fucking nice). 
+          His response you ask? Something to the effect of, let us help you out, we’ll
+          leave your account open for the rest of the year. How nice? After a couple
+          months of being ghosted, we finally threatened legal recourse. It took less
+          than 24 hours to get a response at this point, and it was stated that they
+          had been looking into it deeply and would follow up later. I just got an
+          email today stating that they don’t give a shit that we are out the money,
+          and they will even throw in some free tech support (how fucking nice).
         </p>
         <br />
-        
+
         <h2 class="mb-2">Lessons</h2>
         <p class="text-grey-darker text-base leading-loose text-lg">
-          It is always worth getting a feel for multiple tools when you come to the 
-          inevitable “which tool should I use” crossroads. You don’t need to spend a 
-          lot of time getting a feel for things. Just wire up a few API calls and see 
-          how much effort it requires. At this point, I would prefer a solution that 
-          needs a little bit of help if the team is on the ball, responds quickly, 
-          and shows some level of care. HelloSign has nailed this point, and we are 
-          very grateful we are no longer in DocuSign world, even though it cost us 
-          $20K to eject. Look into a companie's reputation. It matters. DocuSign has 
-          a horrible reputation, and this is something we should have paid closer 
-          attention to. If you are looking at an esignature provider, I’d be happy 
-          to chat about it. We are moving into phase 2 of our implementation, and it’s 
+          It is always worth getting a feel for multiple tools when you come to the
+          inevitable “which tool should I use” crossroads. You don’t need to spend a
+          lot of time getting a feel for things. Just wire up a few API calls and see
+          how much effort it requires. At this point, I would prefer a solution that
+          needs a little bit of help if the team is on the ball, responds quickly,
+          and shows some level of care. HelloSign has nailed this point, and we are
+          very grateful we are no longer in DocuSign world, even though it cost us
+          $20K to eject. Look into a companie's reputation. It matters. DocuSign has
+          a horrible reputation, and this is something we should have paid closer
+          attention to. If you are looking at an esignature provider, I’d be happy
+          to chat about it. We are moving into phase 2 of our implementation, and it’s
           been extremely smooth. Thanks for reading!
         </p>
       </div>

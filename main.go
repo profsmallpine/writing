@@ -9,7 +9,7 @@ import (
 )
 
 // TODO: improve UX/css for reading
-// TODO: write DS blog and add to website
+// TODO: hide nav on scroll down and show on scroll up
 
 // NOTE: move writing to content from database and single handler, blocking:
 // 			 schema based on writing organization

@@ -1,3 +1,5 @@
+// TODO: refactor click to duplicated logic
+
 document.addEventListener("DOMContentLoaded", function(){
   // When the user scrolls the page, execute manageStickyClassForNav
   window.onscroll = function() { manageStickyClassForNav() };
@@ -38,6 +40,25 @@ document.addEventListener("DOMContentLoaded", function(){
     window.scrollTo({
       top: (document.getElementById(nav+'-section').getBoundingClientRect().top + window.scrollY - 30),
       behavior: 'smooth'
+    });
+  }
+
+  // Register any scroll to click events
+  var jumpToClickElems = document.querySelectorAll('[data-jump-to-click]');
+  for (var i = 0; i < jumpToClickElems.length; i++) {
+    console.log(jumpToClickElems[0])
+    console.log(jumpToClickElems[0].dataset.jumpToClick)
+    var id = jumpToClickElems[0].dataset.jumpToClick;
+    // var el = document.getElementById(id);
+    jumpToClickElems[0].addEventListener('click', function(e){
+      var section = document.getElementById(id)
+      if (section) {
+        e.preventDefault();
+        window.scrollTo({
+          top: (section.getBoundingClientRect().top + window.scrollY - 30),
+          behavior: 'smooth'
+        });
+      }
     });
   }
 });

@@ -46,8 +46,6 @@ document.addEventListener("DOMContentLoaded", function(){
   // Register any scroll to click events
   var jumpToClickElems = document.querySelectorAll('[data-jump-to-click]');
   for (var i = 0; i < jumpToClickElems.length; i++) {
-    console.log(jumpToClickElems[0])
-    console.log(jumpToClickElems[0].dataset.jumpToClick)
     var id = jumpToClickElems[0].dataset.jumpToClick;
     // var el = document.getElementById(id);
     jumpToClickElems[0].addEventListener('click', function(e){

@@ -34,8 +34,7 @@ func main() {
 		VerboseLog: false,
 	})
 	if err != nil {
-		logger.Panicf("Failed to set up database: %s", err)
-		return
+		panic("could not load database!")
 	}
 
 	// Build handler.

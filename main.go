@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/joho/godotenv"
+	"github.com/profsmallpine/mid/postgres"
 )
 
 // TODO: improve UX/css for reading
@@ -23,8 +24,22 @@ func main() {
 		panic("could not load env!")
 	}
 
+	// Connect/migrate database.
+	db, err := postgres.Setup(&postgres.DBConfig{
+		Host:       os.Getenv("PG_HOST"),
+		Port:       os.Getenv("PG_PORT"),
+		Name:       os.Getenv("PG_NAME"),
+		User:       os.Getenv("PG_USER"),
+		Password:   os.Getenv("PG_PASSWORD"),
+		VerboseLog: false,
+	})
+	if err != nil {
+		logger.Panicf("Failed to set up database: %s", err)
+		return
+	}
+
 	// Build handler.
-	h := handler{Logger: logger}
+	h := handler{Logger: logger, DB: db}
 
 	// Setup routes.
 	router := buildRoutes(h)

@@ -4,10 +4,13 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+
+	"github.com/jinzhu/gorm"
 )
 
 // handler is http struct for passing services to the router.
 type handler struct {
+	DB     *gorm.DB
 	Logger *log.Logger
 }
 

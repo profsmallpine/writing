@@ -1,0 +1,76 @@
+{{ define "pageContent" }}
+      <div class="m-8 mt-24 lg:mx-32 rounded overflow-hidden shadow-lg p-8 border-l-4 border-blue">
+        <h1 class="mb-8">
+          Major Stripe Functionality Downgrade<br>
+          <span class="italic">The Result of Upgrading our Stripe API version</span>
+        </h1>
+
+        <p class="text-grey-darker text-base leading-loose text-lg">
+          Stripe has been a phenomenal company to work with. They are an
+          exemplar for many things. The way that they manage API version comes
+          to mind after reading <a href="https://stripe.com/blog/api-versioning" target="_window">this article</a>.
+          We could not have built AdvicePay if it wasn’t for the quality of
+          documentation and sanity of their schema / API. They have taken design
+          seriously, and their product seems to pair quality of design and
+          quality of engineering, which is a beautiful and rare thing when these
+          are balanced. However, we have recently experienced a major
+          disappointment when upgrading to their latest API version that seems
+          completely undocumented.
+        </p>
+        <br />
+
+        <p class="text-grey-darker text-base leading-loose text-lg">
+          We have been rocking custom connect accounts for the last few years.
+          This has allowed us to own the on-boarding experience and essentially
+          make stripe invisible to our users. This has the added benefit that
+          when our users receive payments from their clients, the money is
+          transferred directly to their connect account and not mediated by our
+          platform account. There were a handful of ways we could have set this
+          up, but this was a direct recommendation from Stripe. We were one of
+          the early adopters of custom connect accounts, and it has been a solid
+          experience thus far.
+        </p>
+        <br />
+
+        <p class="text-grey-darker text-base leading-loose text-lg">
+          There were a handful of API calls that needed modifications, but we
+          were able to keep things mostly the same. We moved this to our staging
+          environment, and tested the flows that our users go through.
+          Everything was working splendidly, and we deployed without much
+          concern. A few days later, sentry notified us that a client who
+          belonged to a newly created account could not add bank accounts. Rut
+          roh. This worked in staging, using the same API version as production.
+          We cannot duplicate the issue in our test environments. We have been
+          waiting on feedback from Stripe support and not really getting
+          anywhere. We’ve learned that connect accounts must accept the ACH
+          terms & conditions, but since we are using custom accounts, they
+          cannot log in to accept the terms, and we cannot use the API to accept
+          the terms either. Don’t forget that our flow has been working for a
+          couple of years as well. We appear to be stuck in some sort of
+          purgatory where the requisite steps to allow ACH are not accessible.
+          This seems like a use case they just didn’t account for, and it’s been
+          surprising that after 3 weeks of reaching out, we are still in the
+          same spot as when we began. In their docs, there is nothing calling
+          out that direct charges with custom connect accounts using ACH will be
+          blocked. Even their own support team was caught off guard.
+        </p>
+        <br />
+
+        <p class="text-grey-darker text-base leading-loose text-lg">
+          Sadly, the error occurred after we had the ability to revert our API
+          version. In the mean time, we’ve thrown up some banners to alert our
+          users to the situation, but we are been told that these things “can
+          take a long while to resolve” from Stripe support. I'm writing this
+          mainly in hopes to inspire some urgency for a fix on Stripe's end.
+          Overall, Stripe has done right by us and recent events have seemed out
+          of character for what we're used to from them. We've been going
+          hrough their regular support channels (checking in every day) only to
+          hit dead ends and be left in the dark about any sort of timeline.
+          We're not sure if a fix could take half a year and we need to start
+          rewriting ASAP (which would be super painful), or if we should hold
+          out for a fix. Meanwhile, our product is suffering. We are essentially
+          a billing platform, so new accounts not being able to take ACH
+          payments is huge - half of our functionality is blocked.
+        </p>
+      </div>
+{{ end }}

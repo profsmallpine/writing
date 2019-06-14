@@ -24,9 +24,14 @@ func (h *handler) zenOfWritingGoodCode(w http.ResponseWriter, r *http.Request) {
 	respond(h.Logger, w, r, "./tmpl/writing/zen_of_writing_good_code.tmpl", nil)
 }
 
-// lessonsFromAPIDesign is used for handling requests to "/writing/lessons-from-api-design".
+// lessonsFromFailedDocuSignIntegration is used for handling requests to "/writing/lessons-from-api-design".
 func (h *handler) lessonsFromFailedDocuSignIntegration(w http.ResponseWriter, r *http.Request) {
 	respond(h.Logger, w, r, "./tmpl/writing/lessons_from_failed_docusign_integration.tmpl", nil)
+}
+
+// majorStripeFunctionalityDowngrade is used for handling requests to "/writing/major-stripe-functionality-downgrade".
+func (h *handler) majorStripeFunctionalityDowngrade(w http.ResponseWriter, r *http.Request) {
+	respond(h.Logger, w, r, "./tmpl/writing/major_stripe_functionality_downgrade.tmpl", nil)
 }
 
 // devicesStrategy is used for handling requests to "/writing/devices-strategy".

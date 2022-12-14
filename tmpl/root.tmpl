@@ -1,0 +1,160 @@
+{{ define "pageContent" }}
+<!-- TODO: break out each section into partials -->
+<div class="m-8 mt-24 lg:mx-32 rounded overflow-hidden shadow-lg p-8 hover:bg-grey-lightest hover:shadow-none border-l-4 border-blue">
+  <p class="text-3xl font-semibold mb-8">Joseph Timmer: <span class="text-base italic">to create more than I consume</span></p>
+  <p class="mb-4">I like using code to solve real problems that I've had.</p>
+  <p class="mb-4">Monetizing time spent in an app is not pro-human.</p>
+  <p class="mb-4">Technology should be optimized for humans, and prioritizing less <strong>in-app</strong> time needed to get the job done is so <i class="fas fa-fire"></i> right now.</p>
+  <p class="mb-4">I make things around my house - furniture, decks and what not.</p>
+  <p class="mb-4">I make things in the yard - zip-lines, forts, vegetables, and such.</p>
+  <p class="mb-4">I make things on the computer - but try to keep it out of my life otherwise.</p>
+</div>
+
+<div class="flex flex-wrap m-8 mt-24 lg:mx-32">
+  <div class="w-full font-thin cursor-wait leading-tight rounded overflow-hidden shadow-lg p-8 hover:bg-grey-lightest hover:shadow-none border-l-4 border-red">
+    <p class="text-3xl font-semibold">Tools</p>
+    <span class="mr-2 text-base md:text-sm">CSS</span>
+    <span class="mr-2 text-base md:text-sm">HTML</span>
+    <span class="mr-2 text-base md:text-3xl">Javascript</span>
+    <span class="mr-2 text-base md:text-sm">Ruby</span>
+    <span class="mr-2 text-base md:text-sm">Python</span>
+    <span class="mr-2 text-base md:text-5xl">Go</span>
+    <span class="mr-2 text-base md:text-xl">Staedtler black triplus fineliner</span>
+    <span class="mr-2 text-base md:text-base">Ubuntu</span>
+    <span class="mr-2 text-base md:text-3xl">PostgreSQL</span>
+    <span class="mr-2 text-base md:text-3xl">Table Saw <i class="fas fa-toolbox text-xl"></i></span>
+    <span class="mr-2 text-base md:text-2xl">Honda F220 tiller</span>
+    <span class="mr-2 text-base md:text-base">Hestra Tived <i class="far fa-hand-paper text-xl"></i></span>
+    <span class="mr-2 text-base md:text-xl">Apple Notes <i class="far fa-edit"></i></i></span>
+    <span class="mr-2 text-base md:text-2xl">Sliding Miter Saw</span>
+  </div>
+</div>
+
+<hr class="border mt-24 border-dashed">
+
+<div id="writing-section" class="m-8 mt-24 lg:mx-32 rounded overflow-hidden shadow-lg p-8 hover:bg-grey-lightest hover:shadow-none border-l-4 border-blue">
+  <p class="text-3xl font-semibold mb-8">
+    Writing:
+    <span class="text-base italic">
+      I write as a way to grow and process the things that are naturally
+      occupying my mind. These writings will range from technical topics to gardening
+      strategies, but they will all have some philosophical abstract which
+      drives my writing about concrete things. I believe that thinking
+      time is something we are loosing quickly in the battle for our
+      attention driven by the internet. Personally, I have attempted to
+      optimize my device use and have thought quite a bit about it
+      <a href="/writing/devices-strategy">here</a>.
+      The goal of this silliness is to create as much space as possible
+      to ponder things. This means that when I go the bathroom, I do not
+      have a device to pull out and spend my attention, but I get to think
+      about things, like parenting, and how to write better css.
+    </span>
+  </p>
+
+  <!-- NOTE: as this grows, redesign organization and add search + tags -->
+  <div class="flex items-center justify-center w-full py-8">
+    <div class="overflow-hidden rounded w-full shadow-lg leading-normal">
+      <div id="articles">
+        {{ template "articlesList" . }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="border mt-24 border-dashed">
+
+<div id="projects-section" class="flex flex-wrap m-8 mt-24 lg:mx-32">
+  <div class="w-full font-thin cursor-wait leading-tight rounded overflow-hidden shadow-lg p-8 hover:bg-grey-lightest hover:shadow-none border-l-4 border-red float-right">
+    <p class="text-3xl font-semibold mb-8">Projects</p>
+    <span class="mr-2 text-base italic">Coming soon</span>
+  </div>
+</div>
+
+<hr class="border mt-24 border-dashed">
+
+<div id="work-section"class="m-8 mt-24 lg:mx-32 rounded overflow-hidden shadow-lg p-8 hover:bg-grey-lightest hover:shadow-none border-l-4 border-blue">
+  <p class="text-3xl font-semibold mb-8">
+    Work:
+    <span class="text-base italic">
+      I dropped out of college in 2009 and spent the following summer
+      selling pest control door-to-door. Motivated from door-to-door sales
+      as an introvert, I quickly began brainstorming on what I could be
+      working on next. I was lucky enough to get into programming food
+      sorting equipment through my father's business. In this time, I
+      continued to ponder how to spend 80% of my work life in my sweet
+      spot. This eventually led me to programming for the web. 
+    </span>
+  </p>
+
+  <div class="flex items-center justify-center w-full py-8">
+    <div class="overflow-hidden rounded w-full shadow-lg leading-normal">
+      <div class="block hover:bg-grey p-4 border-b no-underline">
+        <p class="font-bold text-lg mb-1 text-black">AdvicePay + XY Planning Network [2017 - now]</p>
+        <p class="text-grey-darker mb-2">
+          I joined AdvicePay as an opportuntiy to use Go on a daily basis. 
+          The project existed as a couple hundred files in a single directory.
+          I helped organize and create a framework for this pile, and we 
+          launched the product a couple of months after I got involved.
+          It is cash-flow positive today after a small investment. 
+        </p>
+        
+        <p class="text-grey-darker mb-2">
+          After launch, I hopped over to XY Planning Network where we built
+          an archiving tool to help keep our members compliant. It's been a
+          tool where I've learned a lot and wrote a lot of code. Most recently,
+          I am pondering the best tooling to be effective and how shared internal
+          libraries can make our work more robust.
+        </p>
+      </div>
+
+      <div class="block hover:bg-grey p-4 border-b no-underline">
+        <p class="font-bold text-lg mb-1 text-black">Bethel Music [2015 - 2017]</p>
+        <p class="text-grey-darker mb-2">
+          I had a fantasic time building rails applications for the Bethel
+          family of companies. They are a scrappy group of people trying
+          to do big things and taking lots of risks along the way. I had
+          a fantastic team that helped to quickly grow my arhcitecural
+          thinking as it relates to building scalable applications. 
+          <a href="https://curia.solutions" target="_window">Seth Davis</a>
+          is a gem, and I can't recommend him highly
+          enough.
+          <a href="https://www.linkedin.com/in/john-burtness-686073169" target="_window">John Burtness</a>
+          managed our small team and created an
+          environment without limits. This will always be a picture of
+          what a small team can produce when the environment is right.
+        </p>
+      </div>
+
+      <div class="block hover:bg-grey p-4 border-b no-underline">
+        <p class="font-bold text-lg mb-1 text-black">NewBOS Partners [2014 - 2015]</p>
+        <p class="text-grey-darker mb-2">
+          NewBOS took a chance on me when I was fresh out of a Dev
+          Bootcamp, and I was delighted to build actual tools for real
+          people. This was a short-lived opportunity as I was the first
+          primary web developer on the team and quickly saw my inadequacy
+          and need for mentoring. I credit Jeff White for my spark in the
+          industry, hiring me when I needed it, and I hope some value
+          was created for the organization through my time there.
+        </p>
+      </div>
+
+      <div class="block hover:bg-grey p-4 no-underline">
+        <p class="font-bold text-lg mb-1 text-black">Loring Industries [2009 - 2014]</p>
+        <p class="text-grey-darker mb-2">
+          Working with family is a wonderful and terrifying experience.
+          I'm extremely grateful for this time as it had zero structure
+          and forced me to think like an entreprenuer if I was going to
+          provide any value to the business. My father taught me that no
+          job is too small and lived out humility in the workplace. My
+          sister taught me to stand tough and to do the right thing, even
+          when the whole world seems against you.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TODO: make each section sticky and fill the screen -->
+<!-- TODO: have down carrot to skip to next section in each section -->
+<!-- TODO: build animation for home page that is arrow with moving dots -->
+{{ end }}

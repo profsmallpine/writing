@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function(){
   }
 
   // Scroll to section when clicking nav item
-  var navItems = ['writing', 'photography', 'work'];
+  var navItems = ['writing', 'projects', 'work'];
   for (var i = 0; i < navItems.length; i++) {
     var id = navItems[i];
     var el = document.getElementById(id);

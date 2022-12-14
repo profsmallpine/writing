@@ -1,0 +1,34 @@
+{{ define "pageContent" }}
+<form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" action="/articles" method="post">
+  <div class="mb-4">
+    <label class="block text-grey-darker text-sm font-bold mb-2" for="title">
+      Title
+    </label>
+    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" name="title" type="text" placeholder="Enter a title">
+  </div>
+  <div class="mb-4">
+    <label class="block text-grey-darker text-sm font-bold mb-2" for="summary">
+      Summary
+    </label>
+    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" name="summary" type="text" placeholder="Enter a short summary">
+  </div>
+  <div class="mb-6">
+    <label class="block text-grey-darker text-sm font-bold mb-2" for="slug">
+      Slug
+    </label>
+    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" name="slug" type="text" placeholder="Enter a slug">
+  </div>
+  <div class="mb-6">
+    <label class="block text-grey-darker text-sm font-bold mb-2" for="body">
+      Body
+    </label>
+    <input id="body" type="hidden" name="body">
+    <trix-editor input="body" type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline trix-content"></trix-editor>
+  </div>
+  <div class="flex items-center justify-between">
+    <button class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+      Submit
+    </button>
+  </div>
+</form>
+{{ end }}

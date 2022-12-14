@@ -1,0 +1,8 @@
+{{ define "pageContent" }}
+<div class="m-8 mt-24 lg:mx-32 rounded overflow-hidden shadow-lg p-8 border-l-4 border-blue">
+  <p class="text-3xl font-semibold mb-8">{{ .Data.article.Title }}</p>
+  <div class="trix-content">
+    {{ .Data.article.BodyHTML }}
+  </div>
+</div>
+{{ end }}

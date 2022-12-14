@@ -1,0 +1,42 @@
+# fly.toml file generated for writing on 2022-12-14T13:37:18-07:00
+
+app = "writing"
+kill_signal = "SIGINT"
+kill_timeout = 5
+processes = []
+
+[env]
+  BASE_URL= "https://writing.fly.dev"
+  ENVIRONMENT = "production"
+  PORT = "8080"
+  WHITELIST_IPS = "69.145.61.149"
+
+[experimental]
+  allowed_public_ports = []
+  auto_rollback = true
+
+[[services]]
+  http_checks = []
+  internal_port = 8080
+  processes = ["app"]
+  protocol = "tcp"
+  script_checks = []
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+    type = "connections"
+
+  [[services.ports]]
+    force_https = true
+    handlers = ["http"]
+    port = 80
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
+
+  [[services.tcp_checks]]
+    grace_period = "1s"
+    interval = "15s"
+    restart_limit = 0
+    timeout = "2s"

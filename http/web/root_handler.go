@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/profsmallpine/mid/domain"
+	"github.com/profsmallpine/writing/domain"
 	"github.com/xy-planning-network/trails/http/resp"
 	"github.com/xy-planning-network/trails/logger"
 )

@@ -10,8 +10,8 @@
 - [x] Add rendering for /articles/<id>
 - [x] Add pagination to articles on root view
 - [ ] Update devices strategy article
-- [ ] Change name from "mid" to "writing"
-- [ ] Deploy to fly
+- [x] Change name from "mid" to "writing"
+- [x] Deploy to fly
 - [ ] delete hosting from digital ocean
 - [ ] deprecate "jr" repository
 - [ ] Add config

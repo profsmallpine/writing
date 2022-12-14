@@ -1,18 +1,19 @@
 package app
 
 import (
+	"embed"
 	"os"
 	"strings"
 
 	"github.com/joho/godotenv"
-	"github.com/profsmallpine/mid/http/web"
-	"github.com/profsmallpine/mid/migrations"
+	"github.com/profsmallpine/writing/http/web"
+	"github.com/profsmallpine/writing/migrations"
 	"github.com/xy-planning-network/trails/http/template"
 	"github.com/xy-planning-network/trails/postgres"
 	"github.com/xy-planning-network/trails/ranger"
 )
 
-func New() (*ranger.Ranger, error) {
+func New(files embed.FS) (*ranger.Ranger, error) {
 	_ = godotenv.Load()
 
 	config := &postgres.CxnConfig{IsTestDB: false, URL: os.Getenv("DATABASE_URL")}
@@ -32,7 +33,7 @@ func New() (*ranger.Ranger, error) {
 		ranger.WithDB(postgres.NewService(db)),
 		ranger.WithUserSessions(userStorer{}),
 		ranger.DefaultParser(
-			nil,
+			files,
 			template.WithFn("add1", func(value int) int { return value + 1 }),
 			template.WithFn("isLast", func(idx, length int) bool { return (idx + 1) == length }),
 			template.WithFn("minus1", func(value int) int { return value - 1 }),

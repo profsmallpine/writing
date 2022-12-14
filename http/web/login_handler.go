@@ -3,7 +3,7 @@ package web
 import (
 	"net/http"
 
-	"github.com/profsmallpine/mid/http/routes"
+	"github.com/profsmallpine/writing/http/routes"
 	"github.com/xy-planning-network/trails/http/resp"
 	"github.com/xy-planning-network/trails/http/session"
 	"github.com/xy-planning-network/trails/logger"

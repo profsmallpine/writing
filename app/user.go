@@ -1,7 +1,7 @@
 package app
 
 import (
-	"github.com/profsmallpine/mid/http/routes"
+	"github.com/profsmallpine/writing/http/routes"
 	"github.com/xy-planning-network/trails/http/middleware"
 )
 

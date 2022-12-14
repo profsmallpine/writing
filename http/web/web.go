@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/schema"
-	"github.com/profsmallpine/mid/domain"
+	"github.com/profsmallpine/writing/domain"
 	"github.com/xy-planning-network/trails/http/session"
 	"github.com/xy-planning-network/trails/logger"
 	"github.com/xy-planning-network/trails/ranger"

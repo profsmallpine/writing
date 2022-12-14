@@ -5,8 +5,8 @@ import (
 	"strconv"
 
 	"github.com/gorilla/mux"
-	"github.com/profsmallpine/mid/domain"
-	"github.com/profsmallpine/mid/http/routes"
+	"github.com/profsmallpine/writing/domain"
+	"github.com/profsmallpine/writing/http/routes"
 	"github.com/xy-planning-network/trails/http/resp"
 	"github.com/xy-planning-network/trails/logger"
 )

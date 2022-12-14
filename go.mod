@@ -1,4 +1,4 @@
-module github.com/profsmallpine/mid
+module github.com/profsmallpine/writing
 
 go 1.19
 

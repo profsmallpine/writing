@@ -8,6 +8,8 @@ require (
 	gorm.io/gorm v1.21.11
 )
 
+require github.com/patrickmn/go-cache v2.1.0+incompatible
+
 require (
 	github.com/boj/redistore v0.0.0-20180917114910-cd5dcc76aeff // indirect
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect

@@ -6,6 +6,7 @@ import (
 
 	"github.com/gorilla/schema"
 	"github.com/profsmallpine/writing/domain"
+	"github.com/profsmallpine/writing/services/gocache"
 	"github.com/xy-planning-network/trails/http/session"
 	"github.com/xy-planning-network/trails/logger"
 	"github.com/xy-planning-network/trails/ranger"
@@ -17,10 +18,12 @@ type Handler struct {
 	*ranger.Ranger
 	writerKey    string
 	whitelistIPs []string
+
+	Cache domain.CacheService
 }
 
 func NewHandler(db *gorm.DB, rng *ranger.Ranger, key string, ips []string) *Handler {
-	return &Handler{db, rng, key, ips}
+	return &Handler{db, rng, key, ips, gocache.NewService()}
 }
 
 // session helps by retrieving the session.TrailsSessionable from the provided context

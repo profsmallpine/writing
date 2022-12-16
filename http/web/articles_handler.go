@@ -9,6 +9,7 @@ import (
 	"github.com/profsmallpine/writing/http/routes"
 	"github.com/xy-planning-network/trails/http/resp"
 	"github.com/xy-planning-network/trails/logger"
+	"github.com/xy-planning-network/trails/postgres"
 )
 
 type createArticleReq struct {
@@ -25,11 +26,18 @@ func (h *Handler) getArticles(w http.ResponseWriter, r *http.Request) {
 		page = 1
 	}
 
-	order := "created_at DESC"
-	articles := []*domain.Article{}
-	pd, err := h.EmitDB().PagedByQuery(&articles, "", nil, order, page, domain.ArticlePerPage)
-	if err != nil {
-		h.Logger.Error(err.Error(), &logger.LogContext{Error: err}) // NOTE: not returning as there are no other routes to send folks
+	pd, found := h.Cache.Get(pageStr)
+	if !found {
+		var err error
+		order := "created_at DESC"
+		articles := []*domain.Article{}
+		pd, err = h.EmitDB().PagedByQuery(&articles, "", nil, order, page, domain.ArticlePerPage)
+		if err != nil {
+			pd = postgres.PagedData{}
+			h.Logger.Error(err.Error(), &logger.LogContext{Error: err}) // NOTE: not returning as there are no other routes to send folks
+		} else {
+			h.Cache.Set(pageStr, pd)
+		}
 	}
 
 	data := map[string]interface{}{"articles": pd}
@@ -57,6 +65,7 @@ func (h *Handler) createArticle(w http.ResponseWriter, r *http.Request) {
 		h.Redirect(w, r, resp.GenericErr(err), resp.Url(routes.NewArticleURL), resp.Code(http.StatusInternalServerError))
 		return
 	}
+	h.Cache.Flush()
 
 	h.Redirect(w, r, resp.Success("Article created!"), resp.Url(routes.RootURL))
 }

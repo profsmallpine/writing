@@ -17,12 +17,18 @@ func (h *Handler) root(w http.ResponseWriter, r *http.Request) {
 		page = 1
 	}
 
-	order := "created_at DESC"
-	articles := []*domain.Article{}
-	pd, err := h.EmitDB().PagedByQuery(&articles, "", nil, order, page, domain.ArticlePerPage)
-	if err != nil {
-		pd = postgres.PagedData{}
-		h.Logger.Error(err.Error(), &logger.LogContext{Error: err}) // NOTE: not returning as there are no other routes to send folks
+	pd, found := h.Cache.Get(pageStr)
+	if !found {
+		var err error
+		order := "created_at DESC"
+		articles := []*domain.Article{}
+		pd, err = h.EmitDB().PagedByQuery(&articles, "", nil, order, page, domain.ArticlePerPage)
+		if err != nil {
+			pd = postgres.PagedData{}
+			h.Logger.Error(err.Error(), &logger.LogContext{Error: err}) // NOTE: not returning as there are no other routes to send folks
+		} else {
+			h.Cache.Set(pageStr, pd)
+		}
 	}
 
 	data := map[string]interface{}{"articles": pd}

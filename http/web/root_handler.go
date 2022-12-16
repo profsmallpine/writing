@@ -7,6 +7,7 @@ import (
 	"github.com/profsmallpine/writing/domain"
 	"github.com/xy-planning-network/trails/http/resp"
 	"github.com/xy-planning-network/trails/logger"
+	"github.com/xy-planning-network/trails/postgres"
 )
 
 func (h *Handler) root(w http.ResponseWriter, r *http.Request) {
@@ -20,6 +21,7 @@ func (h *Handler) root(w http.ResponseWriter, r *http.Request) {
 	articles := []*domain.Article{}
 	pd, err := h.EmitDB().PagedByQuery(&articles, "", nil, order, page, domain.ArticlePerPage)
 	if err != nil {
+		pd = postgres.PagedData{}
 		h.Logger.Error(err.Error(), &logger.LogContext{Error: err}) // NOTE: not returning as there are no other routes to send folks
 	}
 

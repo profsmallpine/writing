@@ -6,6 +6,8 @@ import (
 	"gorm.io/gorm"
 )
 
+const ArticlePerPage = 5
+
 type Article struct {
 	gorm.Model
 	Body    string

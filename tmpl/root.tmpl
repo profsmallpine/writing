@@ -1,6 +1,6 @@
 {{ define "pageContent" }}
 <!-- TODO: break out each section into partials -->
-<div class="m-8 mt-24 lg:mx-32 rounded overflow-hidden shadow-lg p-8 hover:bg-grey-lightest hover:shadow-none border-l-4 border-blue">
+<div class="m-8 mt-24 lg:mx-32 rounded overflow-hidden shadow-2xl p-8 hover:bg-gray-50 hover:shadow-none border-l-4 border-blue-500">
   <p class="text-3xl font-semibold mb-8">Joseph Timmer: <span class="text-base italic">to create more than I consume</span></p>
   <p class="mb-4">I like using code to solve real problems that I've had.</p>
   <p class="mb-4">Monetizing time spent in an app is not pro-human.</p>
@@ -11,7 +11,7 @@
 </div>
 
 <div class="flex flex-wrap m-8 mt-24 lg:mx-32">
-  <div class="w-full font-thin cursor-wait leading-tight rounded overflow-hidden shadow-lg p-8 hover:bg-grey-lightest hover:shadow-none border-l-4 border-red">
+  <div class="w-full font-thin cursor-wait leading-tight rounded overflow-hidden shadow-2xl p-8 hover:bg-gray-50 hover:shadow-none border-l-4 border-red">
     <p class="text-3xl font-semibold">Tools</p>
     <span class="mr-2 text-base md:text-sm">CSS</span>
     <span class="mr-2 text-base md:text-sm">HTML</span>
@@ -32,7 +32,7 @@
 
 <hr class="border mt-24 border-dashed">
 
-<div id="writing-section" class="m-8 mt-24 lg:mx-32 rounded overflow-hidden shadow-lg p-8 hover:bg-grey-lightest hover:shadow-none border-l-4 border-blue">
+<div id="writing-section" class="m-8 mt-24 lg:mx-32 rounded overflow-hidden shadow-2xl p-8 hover:bg-gray-50 hover:shadow-none border-l-4 border-blue-500">
   <p class="text-3xl font-semibold mb-8">
     Writing:
     <span class="text-base italic">
@@ -53,7 +53,7 @@
 
   <!-- NOTE: as this grows, redesign organization and add search + tags -->
   <div class="flex items-center justify-center w-full py-8">
-    <div class="overflow-hidden rounded w-full shadow-lg leading-normal">
+    <div class="overflow-hidden rounded w-full shadow-2xl leading-normal">
       <div id="articles">
         {{ template "articlesList" . }}
       </div>
@@ -64,7 +64,7 @@
 <hr class="border mt-24 border-dashed">
 
 <div id="projects-section" class="flex flex-wrap m-8 mt-24 lg:mx-32">
-  <div class="w-full font-thin cursor-wait leading-tight rounded overflow-hidden shadow-lg p-8 hover:bg-grey-lightest hover:shadow-none border-l-4 border-red float-right">
+  <div class="w-full font-thin cursor-wait leading-tight rounded overflow-hidden shadow-2xl p-8 hover:bg-gray-50 hover:shadow-none border-l-4 border-red float-right">
     <p class="text-3xl font-semibold mb-8">Projects</p>
     <span class="mr-2 text-base italic">Coming soon</span>
   </div>
@@ -72,7 +72,7 @@
 
 <hr class="border mt-24 border-dashed">
 
-<div id="work-section"class="m-8 mt-24 lg:mx-32 rounded overflow-hidden shadow-lg p-8 hover:bg-grey-lightest hover:shadow-none border-l-4 border-blue">
+<div id="work-section"class="m-8 mt-24 lg:mx-32 rounded overflow-hidden shadow-2xl p-8 hover:bg-gray-50 hover:shadow-none border-l-4 border-blue-500">
   <p class="text-3xl font-semibold mb-8">
     Work:
     <span class="text-base italic">
@@ -87,10 +87,10 @@
   </p>
 
   <div class="flex items-center justify-center w-full py-8">
-    <div class="overflow-hidden rounded w-full shadow-lg leading-normal">
-      <div class="block hover:bg-grey p-4 border-b no-underline">
+    <div class="overflow-hidden rounded w-full shadow-2xl leading-normal">
+      <div class="block hover:bg-gray-300 p-4 border-b no-underline">
         <p class="font-bold text-lg mb-1 text-black">AdvicePay + XY Planning Network [2017 - now]</p>
-        <p class="text-grey-darker mb-2">
+        <p class="text-gray-900 mb-2">
           I joined AdvicePay as an opportuntiy to use Go on a daily basis. 
           The project existed as a couple hundred files in a single directory.
           I helped organize and create a framework for this pile, and we 
@@ -98,7 +98,7 @@
           It is cash-flow positive today after a small investment. 
         </p>
         
-        <p class="text-grey-darker mb-2">
+        <p class="text-gray-900 mb-2">
           After launch, I hopped over to XY Planning Network where we built
           an archiving tool to help keep our members compliant. It's been a
           tool where I've learned a lot and wrote a lot of code. Most recently,
@@ -107,9 +107,9 @@
         </p>
       </div>
 
-      <div class="block hover:bg-grey p-4 border-b no-underline">
+      <div class="block hover:bg-gray-300 p-4 border-b no-underline">
         <p class="font-bold text-lg mb-1 text-black">Bethel Music [2015 - 2017]</p>
-        <p class="text-grey-darker mb-2">
+        <p class="text-gray-900 mb-2">
           I had a fantasic time building rails applications for the Bethel
           family of companies. They are a scrappy group of people trying
           to do big things and taking lots of risks along the way. I had
@@ -125,9 +125,9 @@
         </p>
       </div>
 
-      <div class="block hover:bg-grey p-4 border-b no-underline">
+      <div class="block hover:bg-gray-300 p-4 border-b no-underline">
         <p class="font-bold text-lg mb-1 text-black">NewBOS Partners [2014 - 2015]</p>
-        <p class="text-grey-darker mb-2">
+        <p class="text-gray-900 mb-2">
           NewBOS took a chance on me when I was fresh out of a Dev
           Bootcamp, and I was delighted to build actual tools for real
           people. This was a short-lived opportunity as I was the first
@@ -138,9 +138,9 @@
         </p>
       </div>
 
-      <div class="block hover:bg-grey p-4 no-underline">
+      <div class="block hover:bg-gray-300 p-4 no-underline">
         <p class="font-bold text-lg mb-1 text-black">Loring Industries [2009 - 2014]</p>
-        <p class="text-grey-darker mb-2">
+        <p class="text-gray-900 mb-2">
           Working with family is a wonderful and terrifying experience.
           I'm extremely grateful for this time as it had zero structure
           and forced me to think like an entreprenuer if I was going to

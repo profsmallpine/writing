@@ -18,7 +18,7 @@ func (h *Handler) root(w http.ResponseWriter, r *http.Request) {
 
 	order := "created_at DESC"
 	articles := []*domain.Article{}
-	pd, err := h.EmitDB().PagedByQuery(&articles, "", nil, order, page, 1)
+	pd, err := h.EmitDB().PagedByQuery(&articles, "", nil, order, page, domain.ArticlePerPage)
 	if err != nil {
 		h.Logger.Error(err.Error(), &logger.LogContext{Error: err}) // NOTE: not returning as there are no other routes to send folks
 	}

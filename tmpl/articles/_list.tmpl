@@ -1,9 +1,9 @@
 {{ define "articlesList" }}
 {{ $lenArticles := len .Data.articles.Items }}
 {{ range $idx, $a := .Data.articles.Items }}
-<a href="/articles/{{ $a.Slug }}" class="block hover:bg-grey p-4 {{ if not (isLast $idx $lenArticles) }}border-b{{ end }} no-underline">
+<a href="/articles/{{ $a.Slug }}" class="block hover:bg-gray-300 p-4 {{ if not (isLast $idx $lenArticles) }}border-b{{ end }} no-underline">
   <p class="font-bold text-lg mb-1 text-black">{{ $a.Title }} [{{ $a.CreatedAtDate }}]</p>
-  <p class="text-grey-darker mb-2">{{ $a.Summary }}</p>
+  <p class="text-gray-900 mb-2">{{ $a.Summary }}</p>
 </a>
 {{ end }}
 
